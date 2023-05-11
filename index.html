@@ -1,433 +1,438 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <title>Parabéns pela convocação - HEMOCE</title>
-    <meta name="title" content="Parabéns pela convocação — Gerar flyer de apoio à doação de sangue com seu nome"/>
-    <meta name="description" content="Gere seu flyer personalizado com seu nome em apoio à doação de sangue na época da copa" />
 
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <style>
-      body {
-        background-color: #355e9e;
-        font-size: 18px;
-        margin: 0;
-        font-family: "Open Sans", sans-serif;
-      }
+<head>
+  <title>Parabéns pela convocação - HEMOCE</title>
+  <meta name="title" content="Parabéns pela convocação — Gerar flyer de apoio à doação de sangue com seu nome" />
+  <meta name="description"
+    content="Gere seu flyer personalizado com seu nome em apoio à doação de sangue na época da copa" />
 
-      .navbar {
-        background-color: #107b29;
-        color: white;
-        padding: 0.5rem 0;
-        font-weight: bold;
-        text-align: left;
-      }
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&family=Josefin+Sans&family=Poppins&display=swap"
+    rel="stylesheet">
+  <style>
+    body {
+      background-color: #ebebeb;
+      font-size: 18px;
+      margin: 0;
+      font-family: "Open Sans", sans-serif;
+    }
 
-      .navbar a {
-        color: inherit;
-        display: block;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
+    .navbar {
+      background-color: #b62323;
+      color: white;
+      padding: 0.5rem 0;
+      font-weight: bold;
+      text-align: left;
+    }
 
-      .navbar a img {
-        /* height: 1.2rem; */
-      }
+    .navbar a {
+      color: inherit;
+      display: block;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-      .navbar a img.preview {
-        width: 2rem;
-        border: 1px solid #f5c012;
-      }
+    .navbar a img {
+      /* height: 1.2rem; */
+    }
 
-      .navbar .container {
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        gap: 0.2rem;
-      }
+    .navbar a img.preview {
+      width: 2rem;
+      border: 1px solid #f5c012;
+    }
 
-      .container {
-        width: 90%;
-        max-width: 700px;
-        margin: 0 auto;
-        text-align: center;
-      }
+    .navbar .container {
+      text-align: left;
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
 
-      .container input {
-        font-size: 1rem;
-        border-radius: 0.4rem;
-        padding: 0.5rem 1rem;
-        margin: 1rem 0;
-        border: 1px solid grey;
-      }
+    .container {
+      width: 90%;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
 
-      .container button {
-        font-size: 1rem;
-        border-radius: 0.4rem;
-        padding: 0.5rem 1rem;
-        margin: 1rem 0;
-        border-width: 0;
-        border-bottom: 2px solid rgb(9, 99, 37);
-        background-color: #107b29;
-        color: white;
-        cursor: pointer;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
+    .container input {
+      font-size: 1rem;
+      border-radius: 0.4rem;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0;
+      border: 1px solid grey;
+    }
 
-      .container button img {
-        height: 1rem;
-      }
+    .container button {
+      font-size: 1rem;
+      border-radius: 0.4rem;
+      padding: 0.5rem 1rem;
+      margin: 1rem 0;
+      border-width: 0;
+      /* border-bottom: 2px solid rgb(9, 99, 37); */
+      background-color: #fb0400;
+      color: white;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
-      .container canvas {
-        display: block;
-        width: 80%;
-        margin: 0 auto;
-        margin-bottom: 1rem;
-      }
+    .container button img {
+      height: 1rem;
+    }
 
-      .container footer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 1rem;
-        row-gap: 0.5rem;
-        color: #f5c012;
-      }
+    .container canvas {
+      display: block;
+      width: 80%;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+    }
 
-      .container footer a {
-        color: #f5c012;
-        text-decoration: none;
-        column-gap: 0.25rem;
-      }
+    .container footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+      row-gap: 0.5rem;
+      color: #f5c012;
+    }
 
-      .container footer a {
-        display: flex;
-        align-items: center;
-      }
+    .container footer a {
+      color: #f5c012;
+      text-decoration: none;
+      column-gap: 0.25rem;
+    }
 
-      .container footer a img {
-        height: 1.5rem;
-      }
+    .container footer a {
+      display: flex;
+      align-items: center;
+    }
 
-      .container footer a img.profile {
-        border-radius: 50%;
-      }
+    .container footer a img {
+      height: 1.5rem;
+    }
 
-      .container smartphone {
-        display: block;
-        color: #1da60e;
-        margin: 2rem 0;
-      }
+    .container footer a img.profile {
+      border-radius: 50%;
+    }
 
-      .container smartphone input {
-        height: 1.75rem;
-        margin: 0;
-        padding: 0 0.5rem;
-        box-sizing: border-box;
-        font-size: 1rem;
-        border: 1px solid #f5c012;
-        background-color: transparent;
-        color: #f5c012;
-        outline: none;
-        margin-left: 0.5rem;
-      }
+    .container smartphone {
+      display: block;
+      color: #1da60e;
+      margin: 2rem 0;
+    }
 
-      .container smartphone b {
-        color: #f5c012;
-      }
+    .container smartphone input {
+      height: 1.75rem;
+      margin: 0;
+      padding: 0 0.5rem;
+      box-sizing: border-box;
+      font-size: 1rem;
+      border: 1px solid #f5c012;
+      background-color: transparent;
+      color: #f5c012;
+      outline: none;
+      margin-left: 0.5rem;
+    }
 
-      .container smartphone .copy {
-        height: 1.5rem;
-        cursor: pointer;
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 0.5rem;
-      }
+    .container smartphone b {
+      color: #f5c012;
+    }
 
-      .container smartphone a {
-        color: #f5c012;
-        text-decoration: underline;
-        text-underline-offset: 0.5rem;
-      }
+    .container smartphone .copy {
+      height: 1.5rem;
+      cursor: pointer;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 0.5rem;
+    }
 
-      .container smartphone a:hover {
-        color: #b08b10;
-        text-decoration: underline;
-        text-underline-offset: 0.5rem;
-      }
+    .container smartphone a {
+      color: #f5c012;
+      text-decoration: underline;
+      text-underline-offset: 0.5rem;
+    }
 
-      .container smartphone .nubank {
-        height: 1.5rem;
-      }
-    </style>
-    <script src="js/clipboardtext.js"></script>
-  </head>
-  <body>
-    <div class="container">
-      <input type="text" />
+    .container smartphone a:hover {
+      color: #b08b10;
+      text-decoration: underline;
+      text-underline-offset: 0.5rem;
+    }
 
-      <button class="save">Salvar Imagem 💾</button>
-      <button class="share">
-        Compartilhar Imagem 🔗
-      </button>
+    .container smartphone .nubank {
+      height: 1.5rem;
+    }
+  </style>
+  <script src="js/clipboardtext.js"></script>
+</head>
 
-      <canvas width="1080" height="1080"></canvas>
-    </div>
+<body>
+  <div class="container">
+    <input type="text" />
 
-    <script>
-      const canvas = document.querySelector("canvas");
-      const context = canvas.getContext("2d");
+    <button class="save">Salvar Imagem 💾</button>
+    <button class="share">
+      Compartilhar Imagem 🔗
+    </button>
 
-      const baseImage = new Image();
-      baseImage.src = "./base.png";
+    <canvas width="1080" height="1080"></canvas>
+  </div>
 
-      const names = [
-        "Késsia",
-        "Jose",
-        "João",
-        "Michelle",
-        "Joao",
-        "Antônio",
-        "Antonio",
-        "Francisco",
-        "Carlos",
-        "Paulo",
-        "Pedro",
-        "Lucas",
-        "Luiz",
-        "Luíz",
-        "Marcos",
-        "Luis",
-        "Luís",
-        "Gabriel",
-        "Rafael",
-        "Daniel",
-        "Marcelo",
-        "Bruno",
-        "Eduardo",
-        "Felipe",
-        "Raimundo",
-        "Rodrigo",
-        "Manoel",
-        "Mateus",
-        "André",
-        "André",
-        "Denise",
-        "Fernando",
-        "Fábio",
-        "Fabio",
-        "Leonardo",
-        "Gustavo",
-        "Guilherme",
-        "Leandro",
-        "Tiago",
-        "Ânderson",
-        "Anderson",
-        "Ricardo",
-        "Márcio",
-        "Marcio",
-        "Jorge",
-        "Sebastião",
-        "Sebastiao",
-        "Alexandre",
-        "Roberto",
-        "Édson",
-        "Edson",
-        "Diego",
-        "Vítor",
-        "Vitor",
-        "Sérgio",
-        "Sergio",
-        "Cláudio",
-        "Claudio",
-        "Matheus",
-        "Thiago",
-        "Geraldo",
-        "Adriano",
-        "Luciano",
-        "Júlio",
-        "Julio",
-        "Renato",
-        "Alex",
-        "Vinícius",
-        "Vinicius",
-        "Rogério",
-        "Rogerio",
-        "Samuel",
-        "Ronaldo",
-        "Mário",
-        "Mario",
-        "Flávio",
-        "Flavio",
-        "Ígor",
-        "Igor",
-        "Douglas",
-        "Daví",
-        "Davi",
-        "Manuel",
-        "Maria",
-        "Ana",
-        "Francisca",
-        "Antônia",
-        "Antonia",
-        "Adriana",
-        "Juliana",
-        "Márcia",
-        "Marcia",
-        "Fernanda",
-        "Patricia",
-        "Patrícia",
-        "Aline",
-        "Sandra",
-        "Camila",
-        "Amanda",
-        "Bruna",
-        "Jéssica",
-        "Jessica",
-        "Leticia",
-        "Letícia",
-        "Júlia",
-        "Julia",
-        "Luciana",
-        "Vanessa",
-        "Mariana",
-        "Gabriela",
-        "Vera",
-        "Luany",
-        "Vitória",
-        "Vitoria",
-        "Larissa",
-        "Cláudia",
-        "Claudia",
-        "Beatriz",
-        "Luana",
-        "Rita",
-        "Sônia",
-        "Sonia",
-        "Renata",
-        "Eliane",
-        "Josefa",
-        "Simone",
-        "Natália",
-        "Natalia",
-        "Cristiane",
-        "Carla",
-        "Débora",
-        "Debora",
-        "Rosângela",
-        "Rosangela",
-        "Jaqueline",
-        "Rosa",
-        "Daniela",
-        "Aparecida",
-        "Marlene",
-        "Terezinha",
-        "Raimunda",
-        "Andréia",
-        "Andreia",
-        "Fabiana",
-        "Lúcia",
-        "Lucia",
-        "Raquel",
-        "Ângela",
-        "Angela",
-        "Rafaela",
-        "Joana",
-        "Luzía",
-        "Luzia",
-        "Elaine",
-        "Daniele",
-        "Regina",
-        "Dáiane",
-        "Daiane",
-        "Suelí",
-        "Sueli",
-        "Alessandra",
-        "Isabel",
-      ];
+  <script>
+    const canvas = document.querySelector("canvas");
+    const context = canvas.getContext("2d");
 
-      document.querySelector("input").value =
-        names[Math.floor(Math.random() * names.length)];
+    const baseImage = new Image();
+    baseImage.src = "./base.png";
 
-      document.querySelector("button.save").addEventListener("click", () => {
-        const a = document.createElement("a");
-        a.setAttribute("href", canvas.toDataURL("image/png"));
-        a.setAttribute(
-          "download",
-          document.querySelector("input").value.trim()
-        );
-        a.click();
+    const names = [
+      "Késsia",
+      "Jose",
+      "João",
+      "Michelle",
+      "Joao",
+      "Antônio",
+      "Antonio",
+      "Francisco",
+      "Carlos",
+      "Paulo",
+      "Pedro",
+      "Lucas",
+      "Luiz",
+      "Luíz",
+      "Marcos",
+      "Luis",
+      "Luís",
+      "Gabriel",
+      "Rafael",
+      "Daniel",
+      "Marcelo",
+      "Bruno",
+      "Eduardo",
+      "Felipe",
+      "Raimundo",
+      "Rodrigo",
+      "Manoel",
+      "Mateus",
+      "André",
+      "André",
+      "Denise",
+      "Fernando",
+      "Fábio",
+      "Fabio",
+      "Leonardo",
+      "Gustavo",
+      "Guilherme",
+      "Leandro",
+      "Tiago",
+      "Ânderson",
+      "Anderson",
+      "Ricardo",
+      "Márcio",
+      "Marcio",
+      "Jorge",
+      "Sebastião",
+      "Sebastiao",
+      "Alexandre",
+      "Roberto",
+      "Édson",
+      "Edson",
+      "Diego",
+      "Vítor",
+      "Vitor",
+      "Sérgio",
+      "Sergio",
+      "Cláudio",
+      "Claudio",
+      "Matheus",
+      "Thiago",
+      "Geraldo",
+      "Adriano",
+      "Luciano",
+      "Júlio",
+      "Julio",
+      "Renato",
+      "Alex",
+      "Vinícius",
+      "Vinicius",
+      "Rogério",
+      "Rogerio",
+      "Samuel",
+      "Ronaldo",
+      "Mário",
+      "Mario",
+      "Flávio",
+      "Flavio",
+      "Ígor",
+      "Igor",
+      "Douglas",
+      "Daví",
+      "Davi",
+      "Manuel",
+      "Maria",
+      "Ana",
+      "Francisca",
+      "Antônia",
+      "Antonia",
+      "Adriana",
+      "Juliana",
+      "Márcia",
+      "Marcia",
+      "Fernanda",
+      "Patricia",
+      "Patrícia",
+      "Aline",
+      "Sandra",
+      "Camila",
+      "Amanda",
+      "Bruna",
+      "Jéssica",
+      "Jessica",
+      "Leticia",
+      "Letícia",
+      "Júlia",
+      "Julia",
+      "Luciana",
+      "Vanessa",
+      "Mariana",
+      "Gabriela",
+      "Vera",
+      "Luany",
+      "Vitória",
+      "Vitoria",
+      "Larissa",
+      "Cláudia",
+      "Claudia",
+      "Beatriz",
+      "Luana",
+      "Rita",
+      "Sônia",
+      "Sonia",
+      "Renata",
+      "Eliane",
+      "Josefa",
+      "Simone",
+      "Natália",
+      "Natalia",
+      "Cristiane",
+      "Carla",
+      "Débora",
+      "Debora",
+      "Rosângela",
+      "Rosangela",
+      "Jaqueline",
+      "Rosa",
+      "Daniela",
+      "Aparecida",
+      "Marlene",
+      "Terezinha",
+      "Raimunda",
+      "Andréia",
+      "Andreia",
+      "Fabiana",
+      "Lúcia",
+      "Lucia",
+      "Raquel",
+      "Ângela",
+      "Angela",
+      "Rafaela",
+      "Joana",
+      "Luzía",
+      "Luzia",
+      "Elaine",
+      "Daniele",
+      "Regina",
+      "Dáiane",
+      "Daiane",
+      "Suelí",
+      "Sueli",
+      "Alessandra",
+      "Isabel",
+    ];
+
+    document.querySelector("input").value = "Richarlison"
+    // names[Math.floor(Math.random() * names.length)];
+
+    document.querySelector("button.save").addEventListener("click", () => {
+      const a = document.createElement("a");
+      a.setAttribute("href", canvas.toDataURL("image/png"));
+      a.setAttribute(
+        "download",
+        document.querySelector("input").value.trim()
+      );
+      a.click();
+    });
+
+    document.querySelector("button.share").addEventListener("click", () => {
+      canvas.toBlob((blob) => {
+        const filesArray = [
+          new File(
+            [blob],
+            document.querySelector("input").value.trim() + ".jpg",
+            {
+              type: "image/jpeg",
+              lastModified: new Date().getTime(),
+            }
+          ),
+        ];
+
+        if (navigator.share) {
+          navigator.share({
+            files: filesArray,
+          });
+        } else {
+          alert('Função de compartilhamento não habilitada em sites sem certificado de segurança. [http]');
+        }
       });
+    });
 
-      document.querySelector("button.share").addEventListener("click", () => {
-        canvas.toBlob((blob) => {
-          const filesArray = [
-            new File(
-              [blob],
-              document.querySelector("input").value.trim() + ".jpg",
-              {
-                type: "image/jpeg",
-                lastModified: new Date().getTime(),
-              }
-            ),
-          ];
+    baseImage.addEventListener("load", () => {
+      function draw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(baseImage, 0, 0);
 
-          if(navigator.share) {
-            navigator.share({
-              files: filesArray,
-            });
-          } else {
-            alert('Função de compartilhamento não habilitada em sites sem certificado de segurança. [http]');
+        context.save();
+
+        context.translate(555, 500);
+        context.fillStyle = "#d0d0d0";
+
+        context.textBaseline = "center";
+        const inputText = document.querySelector("input").value.trim();
+
+        // Definir tamanho do texto com base no número de letras
+        let tamanhoTexto = 140; // Tamanho padrão para até 7 letras
+        if (inputText.length > 7) {
+          tamanhoTexto = 140 - (inputText.length - 7) * 10; // Diminui 10 pixels para cada letra além de 7
+          if (tamanhoTexto < 40) {
+            tamanhoTexto = 40; // Define um tamanho mínimo de 40 pixels
           }
-        });
-      });
-
-      baseImage.addEventListener("load", () => {
-        function draw() {
-          context.clearRect(0, 0, canvas.width, canvas.height);
-          context.drawImage(baseImage, 0, 0);
-
-          context.save();
-
-          context.translate(555, 500);
-
-          context.textBaseline = "middle";
-          context.font = "200px Anton";
-          const width = context.measureText(
-            document.querySelector("input").value.trim().toUpperCase() + ','
-          ).width;
-          
-          /* Sombreado */
-          context.fillStyle = "#d0d0d0";
-          context.fillText(
-            document.querySelector("input").value.trim().toUpperCase() + ',',
-            -width / 2 + 10,
-            30
-          );
-
-          /* Texto */
-          context.fillStyle = "#355e9e";
-          context.fillText(
-            document.querySelector("input").value.trim().toUpperCase() + ',',
-            -width / 2,
-            20
-          );
-
-          context.restore();
-
-          setTimeout(draw, 100);
         }
 
-        draw();
-      });
-    </script>
-  </body>
+        const width = context.measureText(inputText).width;
+
+        context.font = tamanhoTexto + "px Epilogue";
+        context.fillStyle = "#fff";
+        context.fillText(inputText, -500, -150);
+
+        context.restore();
+
+        setTimeout(draw, 100);
+      }
+
+
+
+      draw();
+    });
+  </script>
+</body>
+
 </html>
