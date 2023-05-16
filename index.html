@@ -12,8 +12,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&family=Josefin+Sans&family=Poppins&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,600;1,600&family=Josefin+Sans&family=Poppins&display=swap"
     rel="stylesheet">
   <style>
     body {
@@ -187,7 +186,7 @@
     <canvas width="1080" height="1080"></canvas>
   </div>
 
-  <script>
+  <script defer>
     const canvas = document.querySelector("canvas");
     const context = canvas.getContext("2d");
 
@@ -395,42 +394,41 @@
       });
     });
 
-    baseImage.addEventListener("load", () => {
-      function draw() {
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        context.drawImage(baseImage, 0, 0);
-
-        context.save();
-
-        context.translate(555, 500);
-        context.fillStyle = "#d0d0d0";
-
-        context.textBaseline = "center";
-        const inputText = document.querySelector("input").value.trim();
-
-        // Definir tamanho do texto com base no número de letras
-        let tamanhoTexto = 140; // Tamanho padrão para até 7 letras
-        if (inputText.length > 7) {
-          tamanhoTexto = 140 - (inputText.length - 7) * 10; // Diminui 10 pixels para cada letra além de 7
-          if (tamanhoTexto < 40) {
-            tamanhoTexto = 40; // Define um tamanho mínimo de 40 pixels
-          }
-        }
-
-        const width = context.measureText(inputText).width;
-
-        context.font = tamanhoTexto + "px Epilogue";
-        context.fillStyle = "#fff";
-        context.fillText(inputText, -500, -150);
-
-        context.restore();
-
-        setTimeout(draw, 100);
+    const input = document.querySelector("input");
+    function setFontByMaxWidth(maxWidth, fontSize = 1) {
+      const widthToCompare = context.measureText(input.value.trim()).width
+      context.fillStyle = "#fff";
+      if (widthToCompare == 0) {
+        context.font = "40 px Epilogue";
+        return;
       }
+      context.font = fontSize + "px Epilogue";
+      console.log({ font: context.font })
+      if (fontSize >= 190)
+        return;
+      if (widthToCompare < maxWidth) {
+        setFontByMaxWidth(maxWidth, fontSize + 1);
+      }
+    }
 
-
-
-      draw();
+    input.addEventListener("keyup", function () {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(baseImage, 0, 0);
+      context.save();
+      context.translate(555, 500);
+      context.fillStyle = "#d0d0d0";
+      context.textBaseline = "center";
+      setFontByMaxWidth(500);
+      context.fillText(this.value.trim(), -500, -150);
+      context.restore();
+    });
+    baseImage.addEventListener("load", () => {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+      context.drawImage(baseImage, 0, 0);
+      context.save();
+      setTimeout(() => input.dispatchEvent(new Event("keyup")), 100);
+      setTimeout(() => input.dispatchEvent(new Event("keyup")), 300);
+      setTimeout(() => input.dispatchEvent(new Event("keyup")), 500);
     });
   </script>
 </body>
